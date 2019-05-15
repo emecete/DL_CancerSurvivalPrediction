@@ -22,8 +22,7 @@ a =treemap(pat1[seq(1,10000),],
         fontsize.title = 0,
         aspRatio = 1,
         type="value",
-        palette="PuBuGn"
-        
+        palette="RdYlBu"
 )
 
 library(plyr)
