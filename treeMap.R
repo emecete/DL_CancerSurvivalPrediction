@@ -10,8 +10,8 @@ pat1$freq <- rep(1, nrow(pat1))
 #pat1$colors <- rainbow(nlevels(pat1$TCGA.19.1787.01))[pat1$TCGA.19.1787.01]
 
 # treemap
-png(filename="prueba.png")
-treemap(pat1[seq(1,10000),],
+png(filename="prueba3.png")
+treemap(pat1[seq(1,1000),],
         index=c("Functional.Annotation.Subgroup","Functional.Annotation","geneName"),
         vSize="freq",
         #type="value",
@@ -23,7 +23,9 @@ treemap(pat1[seq(1,10000),],
         fontsize.title = 0,
         aspRatio = 1,
         type="value",
-        palette="RdYlBu"
+        palette="RdYlBu",
+        frame.plot=FALSE
+        #bty="n"
 )
 
 dev.off()
