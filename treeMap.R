@@ -45,4 +45,61 @@ b =treemap(counts,
            fontsize.title = 0
 )
 
+########## BRCA AND NON BRCA ########################
 
+#library
+library(treemap)
+#setting working directory
+setwd("~/INGENIERIA_DE_LA_SALUD/4CUARTO/SEGUNDO_CUATRIMESTRE/TFG/CODE/DL_CancerSurvivalPrediction")
+
+#reading pat_brca csv
+pat_brca <- read.csv("pat_brca.csv")
+
+#adding freq for each gene; all genes have freq = 1
+pat_brca$freq <- rep(1, nrow(pat_brca))
+
+# treemap
+png(filename="pr_brca.png")
+par(bty = 'n') # reduce white background around plot in png image
+treemap(pat_brca,
+        index=c("Functional.Annotation.Subgroup","Functional.Annotation","geneName"),
+        vSize="freq",
+        vColor="TCGA.3C.AAAU.01_BRCA",
+        sortID = "order",
+        fontsize.labels = 0,
+        border.lwds = 0,
+        position.legend = "none",
+        fontsize.title = 0,
+        aspRatio = 1,
+        type="value",
+        palette="RdYlBu",
+        frame.plot=FALSE
+)
+
+dev.off()
+
+#reading pat_non_brca csv
+pat_non_brca <- read.csv("pat_non_brca.csv")
+
+#adding freq for each gene; all genes have freq = 1
+pat_non_brca$freq <- rep(1, nrow(pat_non_brca))
+
+# treemap
+png(filename="pr_non_brca_2.png")
+par(bty = 'n') # reduce white background around plot in png image
+treemap(pat_non_brca,
+        index=c("Functional.Annotation.Subgroup","Functional.Annotation","geneName"),
+        vSize="freq",
+        vColor="TCGA.02.0047.01_NON_BRCA",
+        sortID = "order",
+        fontsize.labels = 0,
+        border.lwds = 0,
+        position.legend = "none",
+        fontsize.title = 0,
+        aspRatio = 1,
+        type="value",
+        palette="RdYlBu",
+        frame.plot=FALSE
+)
+
+dev.off()
