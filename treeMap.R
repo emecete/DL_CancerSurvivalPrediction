@@ -11,7 +11,8 @@ pat1$freq <- rep(1, nrow(pat1))
 
 # treemap
 png(filename="prueba3.png")
-treemap(pat1[seq(1,1000),],
+par(bty = 'n') 
+treemap(pat1[seq(1,1900),],
         index=c("Functional.Annotation.Subgroup","Functional.Annotation","geneName"),
         vSize="freq",
         #type="value",
@@ -25,7 +26,6 @@ treemap(pat1[seq(1,1000),],
         type="value",
         palette="RdYlBu",
         frame.plot=FALSE
-        #bty="n"
 )
 
 dev.off()
