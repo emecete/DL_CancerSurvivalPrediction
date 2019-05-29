@@ -4,7 +4,7 @@ library(snow)
 library(treemap)
 start.time <- Sys.time()
 print("loading file")
-exp_to_tree_map <- read.csv("exp_to_tree_map.csv")
+exp_to_tree_map <- read.csv("exp_to_KEGG_tree_map.csv")
 print("file loaded")
 end.time <- Sys.time()
 time.taken <- end.time - start.time
